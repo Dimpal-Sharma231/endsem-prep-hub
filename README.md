@@ -1,4 +1,6 @@
-# EndSem Prep Hub
+# EndSem Prep Hub 🚀
+
+### 🌐 [View the Live Website Here](https://your-deployment-url.vercel.app)
 
 A modern, responsive, and interactive college exam preparation web application built for **SPPU Second Year (2024 Pattern)** students. **EndSem Prep Hub** organizes unit-wise important questions with concise, exam-oriented answers and lets students track their study progress across all 5 subjects right in the browser.
 
