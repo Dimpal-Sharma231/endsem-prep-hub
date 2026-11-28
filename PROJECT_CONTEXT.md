@@ -10,7 +10,7 @@
 
 ## Executive Summary
 
-**EndSem Prep Hub** is a specialized, responsive, client-side React single-page web application (SPA) created to assist second-year engineering students under **Savitribai Phule Pune University (SPPU, 2024 Pattern)** in preparing for end-semester examinations. The application aggregates and organizes curriculum topics across **5 core technical subjects**, partitioned into **25 units**, containing **230 exam-oriented questions** with structured, point-wise model answers. 
+**EndSem Prep Hub** is a specialized, responsive, client-side React single-page web application (SPA) created to assist second-year engineering students under **Savitribai Phule Pune University (SPPU, 2024 Pattern)** in preparing for end-semester examinations. The application aggregates and organizes curriculum topics across **5 core technical subjects**, partitioned into **25 units**, containing **220 exam-oriented questions** with structured, point-wise model answers. 
 
 The application is architected as a pure client-side SPA with state persistence powered by the browser's `localStorage` API, accompanied by a dark-mode first responsive user interface powered by Tailwind CSS and Lucide React icons.
 
@@ -46,7 +46,7 @@ flowchart TD
     A["User Lands on Home Dashboard (/)"] --> B{"Choose Action"}
     B -->|"Global Search (Ctrl+K)"| C["Type Topic/Question in Search Modal"]
     B -->|"Browse Cards"| D["Select 1 of 5 Subject Cards"]
-    B -->|"View Overview"| E["Inspect Global Readiness (Total Done X/230)"]
+    B -->|"View Overview"| E["Inspect Global Readiness (Total Done X/220)"]
     
     C -->|"Click Result"| F["Deep link to Unit Page (/subject/:sId/unit/:uId?q=:idx)"]
     D --> G["Subject Detail Page (/subject/:subjectId)"]
@@ -139,11 +139,11 @@ c:\Users\Admin\Desktop\end sem\endsem-prep-hub\
     │   ├── DashboardPage.jsx             # Landing view: readiness stats & subject cards
     │   ├── SubjectPage.jsx               # Subject overview, unit filters & accordions
     │   └── UnitPage.jsx                  # Dedicated unit study view with sequential navigation
-    ├── subjectsData/                     # Static curriculum datasets (230 questions)
+    ├── subjectsData/                     # Static curriculum datasets (220 questions)
     │   ├── ai.js                         # Foundation of AI (5 units, 30 questions)
     │   ├── deld.js                       # DELD (5 units, 50 questions)
     │   ├── df.js                         # Digital Finance (5 units, 50 questions)
-    │   ├── os.js                         # Operating Systems (5 units, 50 questions)
+    │   ├── os.js                         # Operating Systems (5 units, 40 questions)
     │   └── uhv.js                        # Universal Human Values (5 units, 50 questions)
     └── utils/                            # Utility helpers
         └── subjectIcons.js               # Lucide icon mapping and theme accent tokens
@@ -241,7 +241,7 @@ graph TD
 
 | Feature | Implementation Status | Functional Description & Code Location |
 | :--- | :--- | :--- |
-| **Comprehensive Curriculum** | **Fully Implemented** | Contains all 5 SPPU subjects, 25 units, and 230 questions with exam answers. Defined in [src/subjectsData/](file:///c:/Users/Admin/Desktop/end%20sem/endsem-prep-hub/src/subjectsData/). |
+| **Comprehensive Curriculum** | **Fully Implemented** | Contains all 5 SPPU subjects, 25 units, and 220 questions with exam answers. Defined in [src/subjectsData/](file:///c:/Users/Admin/Desktop/end%20sem/endsem-prep-hub/src/subjectsData/). |
 | **Interactive Checklists** | **Fully Implemented** | Clicking a checkbox updates the question key (`${subjectId}:${unitId}:${questionIndex}`) in state and `localStorage`. Visual strikethrough and "Done" badge applied. Handled in [QuestionItem.jsx](file:///c:/Users/Admin/Desktop/end%20sem/endsem-prep-hub/src/components/QuestionItem.jsx#L77-L91). |
 | **Expandable Model Answers** | **Fully Implemented** | Clicking anywhere on a question card expands the exam-oriented answer using CSS grid transitions. Selection detection prevents collapse while copying text. Located in [QuestionItem.jsx](file:///c:/Users/Admin/Desktop/end%20sem/endsem-prep-hub/src/components/QuestionItem.jsx#L30-L38). |
 | **Real-time Progress Calculation** | **Fully Implemented** | Computes completed counts and completion percentages on the fly for units, subjects, and the entire syllabus. Located in [useProgress.js](file:///c:/Users/Admin/Desktop/end%20sem/endsem-prep-hub/src/hooks/useProgress.js#L87-L130). |
@@ -261,10 +261,10 @@ graph TD
 ### 4.2 Subject & Question Breakdown
 
 ```
-Total Curriculum: 5 Subjects | 25 Units | 230 Questions
+Total Curriculum: 5 Subjects | 25 Units | 220 Questions
 ├── Foundation of Artificial Intelligence (ai): 5 Units | 30 Questions (8+5+5+7+5)
 ├── Digital Electronics & Logic Design (deld): 5 Units | 50 Questions (10+10+10+10+10)
-├── Operating Systems (os): 5 Units | 50 Questions (10+10+10+10+10)
+├── Operating Systems (os): 5 Units | 40 Questions (8+8+8+8+8)
 ├── Universal Human Values (uhv): 5 Units | 50 Questions (10+10+10+10+10)
 └── Digital Finance (df): 5 Units | 50 Questions (10+10+10+10+10)
 ```
@@ -372,7 +372,7 @@ interface Subject {
 
 | Area / Subsystem | Status | Verification & Findings |
 | :--- | :--- | :--- |
-| **Core Curriculum Data** | **100% Completed** | All 5 subjects, 25 units, and 230 questions with full answers are present and verified. |
+| **Core Curriculum Data** | **100% Completed** | All 5 subjects, 25 units, and 220 questions with full answers are present and verified. |
 | **Client Routing** | **100% Completed** | Home (`/`), Subject (`/subject/:subjectId`), and Unit (`/subject/:subjectId/unit/:unitId`) routes function with wildcard fallback. |
 | **UI Component System** | **100% Completed** | Header, sidebar, drawer, progress bars, cards, accordions, and questions are implemented. |
 | **State & Persistence** | **100% Completed** | LocalStorage read/write logic, question toggles, batch unit toggles, and subject resets are operational. |
@@ -503,7 +503,7 @@ quadrantChart
 | :--- | :--- |
 | **Project Name** | EndSem Prep Hub |
 | **Primary Framework** | React 18.3.1 (Vite + Tailwind CSS 3.4.17) |
-| **Curriculum Scope** | SPPU Second Year (2024 Pattern) — 5 Subjects, 25 Units, 230 Questions |
+| **Curriculum Scope** | SPPU Second Year (2024 Pattern) — 5 Subjects, 25 Units, 220 Questions |
 | **State Persistence** | Client `localStorage` (`endsem-prep-hub-progress-v1`) |
 | **Primary Entry Points** | [src/main.jsx](file:///c:/Users/Admin/Desktop/end%20sem/endsem-prep-hub/src/main.jsx) (Mount), [src/App.jsx](file:///c:/Users/Admin/Desktop/end%20sem/endsem-prep-hub/src/App.jsx) (Router & State), [src/data.js](file:///c:/Users/Admin/Desktop/end%20sem/endsem-prep-hub/src/data.js) (Curriculum) |
 | **Current Git Branch** | `dheeraj-development` (identical to `main` at `f38a132`) |

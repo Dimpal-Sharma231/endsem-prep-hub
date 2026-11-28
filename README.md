@@ -8,16 +8,16 @@ A modern, responsive, and interactive college exam preparation web application b
 
 ## Features
 
-- **5 Core Subjects & 25 Units (230 Questions Total):**
+- **5 Core Subjects & 25 Units (220 Questions Total):**
   - **Foundation of Artificial Intelligence (`ai`)** — 5 units, 30 questions
   - **Digital Electronics and Logic Design (`deld`)** — 5 units, 50 questions
-  - **Operating Systems (`os`)** — 5 units, 50 questions
+  - **Operating Systems (`os`)** — 5 units, 40 questions
   - **Universal Human Values (`uhv`)** — 5 units, 50 questions
   - **Digital Finance (`df`)** — 5 units, 50 questions
 - **Expandable Exam-Ready Answers:** Click any question card to smoothly expand or collapse a concise, point-wise, university exam-ready answer underneath.
 - **Interactive Progress Tracking (`LocalStorage`):** Check off completed questions to strike them through and mark them as **Done** (isolated from card expansion). All progress persists automatically in `localStorage` across refreshes and sessions.
 - **Real-Time Progress Bars:** Live completion counters (`X/Y Questions Completed`) and percentage bars per unit, per subject, and across the entire syllabus.
-- **Global Search (`Ctrl+K` / `Cmd+K`):** Instantly search across all 230 questions, answers, and unit syllabus topics and jump straight to the matching unit and highlighted question.
+- **Global Search (`Ctrl+K` / `Cmd+K`):** Instantly search across all 220 questions, answers, and unit syllabus topics and jump straight to the matching unit and highlighted question.
 - **Dark Mode Default & Theme Toggle:** Designed with a deep slate dark theme for comfortable late-night studying, with a one-click light mode toggle in the header.
 - **Mobile & Desktop Responsive:** Persistent subject sidebar on desktop and a slide-over navigation drawer on mobile devices.
 
@@ -51,7 +51,7 @@ endsem-prep-hub/
     ├── subjectsData/
     │   ├── ai.js               # Foundation of AI (30 Q&A)
     │   ├── deld.js             # DELD (50 Q&A)
-    │   ├── os.js               # Operating Systems (50 Q&A)
+    │   ├── os.js               # Operating Systems (40 Q&A)
     │   ├── uhv.js              # Universal Human Values (50 Q&A)
     │   └── df.js               # Digital Finance (50 Q&A)
     ├── hooks/
